@@ -29,26 +29,16 @@
 </head>
 
 <body>
-  <h1>Inserisci i tuoi pronostici</h1>
-  <div class="form-container">
-    <form id="pickem-form">
-      <label for="playerName">Nome Giocatore:</label>
-      <input type="text" id="playerName" name="playerName" placeholder="Inserisci il tuo nome" required>
-
-      <label for="match1">Pronostico Match 1:</label>
-      <input type="text" id="match1" name="match1" placeholder="Vincitore Match 1" required>
-
-      <label for="match2">Pronostico Match 2:</label>
-      <input type="text" id="match2" name="match2" placeholder="Vincitore Match 2" required>
-
-      <button type="submit">Invia Pronostici</button>
+    <h1>Pick'em Tournament</h1>
+    <form id="pronosticoForm">
+        <input type="text" id="nomeGiocatore" placeholder="Nome Giocatore" required>
+        <input type="text" id="pronostico" placeholder="Il tuo pronostico" required>
+        <button type="submit">Aggiungi Pronostico</button>
     </form>
-  </div>
 
-
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-  <script src="script.js"></script> <!-- Includi il tuo file script.js -->
-  
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="script.js"></script> <!-- Includi il tuo file script.js -->
 </body>
+
 </html>
