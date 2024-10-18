@@ -1,16 +1,25 @@
-// Configurazione Firebase
-const firebaseConfig = {
-    apiKey: "LA_TUA_API_KEY",
-    authDomain: "IL_TUO_DOMINIO.firebaseapp.com",
-    projectId: "IL_TUO_PROJECT_ID",
-    storageBucket: "IL_TUO_BUCKET.appspot.com",
-    messagingSenderId: "IL_TUO_SENDER_ID",
-    appId: "LA_TUA_APP_ID"
-};
+// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Inizializza Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCm_cgBqQz7rvxtlsC4WhUXLLKVkT0uPY8",
+    authDomain: "pick-em-e7f28.firebaseapp.com",
+    projectId: "pick-em-e7f28",
+    storageBucket: "pick-em-e7f28.appspot.com",
+    messagingSenderId: "970548870322",
+    appId: "1:970548870322:web:814f99f15ce364c8e89dab",
+    measurementId: "G-4XLTPFHHRQ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
 
 // Funzione per aggiungere un pronostico
 function aggiungiPronostico(nomeGiocatore, pronostico) {
