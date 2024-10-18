@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pick'em Tournament</title>
-    
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <!-- Include Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="style.css"> <!-- Collegamento al file CSS -->
 </head>
 <body>
     <h1>Pick'em Tournament</h1>
@@ -18,44 +14,44 @@
         <button type="submit">Aggiungi Pronostico</button>
     </form>
 
+    <!-- Script Firebase inserito senza l'uso di moduli o JS complessi -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <script>
         // Configurazione Firebase
         const firebaseConfig = {
-            apiKey: "AIzaSyCm_cgBqQz7rvxtlsC4WhUXLLKVkT0uPY8",
-            authDomain: "pick-em-e7f28.firebaseapp.com",
-            projectId: "pick-em-e7f28",
-            storageBucket: "pick-em-e7f28.appspot.com",
-            messagingSenderId: "970548870322",
-            appId: "1:970548870322:web:814f99f15ce364c8e89dab",
-            measurementId: "G-4XLTPFHHRQ"
+            apiKey: "API_KEY", // Inserisci qui la tua API_KEY
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
         };
 
         // Inizializza Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // Funzione per aggiungere un pronostico
+        // Funzione per aggiungere pronostico (senza importazioni complicate)
         function aggiungiPronostico(nomeGiocatore, pronostico) {
             db.collection("pronostici").add({
                 nomeGiocatore: nomeGiocatore,
                 pronostico: pronostico,
-                punteggio: 0 // Inizialmente impostato a 0
-            })
-            .then(() => {
-                console.log("Pronostico aggiunto con successo!");
-            })
-            .catch((error) => {
-                console.error("Errore nell'aggiunta del pronostico: ", error);
+                punteggio: 0
+            }).then(() => {
+                console.log("Pronostico aggiunto con successo");
+            }).catch((error) => {
+                console.error("Errore nell'aggiunta: ", error);
             });
         }
 
-        // Aggiungi event listener al modulo
+        // Event listener per il modulo
         document.getElementById('pronosticoForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene il comportamento predefinito del modulo
+            event.preventDefault();
             const nomeGiocatore = document.getElementById('nomeGiocatore').value;
             const pronostico = document.getElementById('pronostico').value;
             aggiungiPronostico(nomeGiocatore, pronostico);
-            this.reset(); // Resetta il modulo dopo l'invio
+            this.reset();
         });
     </script>
 </body>
