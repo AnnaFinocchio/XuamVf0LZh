@@ -36,15 +36,6 @@ function aggiungiPronostico(nomeGiocatore, pronostico) {
     });
 }
 
-// Funzione per visualizzare i pronostici
-function visualizzaPronostici() {
-    db.collection("pronostici").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data().nomeGiocatore} - ${doc.data().pronostico}`);
-        });
-    });
-}
-
 // Aggiungi event listener al modulo
 document.getElementById('pronosticoForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Previene il comportamento predefinito del modulo
