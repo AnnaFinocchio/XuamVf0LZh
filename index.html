@@ -1,3 +1,62 @@
 <html>
-  <h1>Ciao</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Pick'em Tournament</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form-container input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inserisci i tuoi pronostici</h1>
+  <div class="form-container">
+    <form id="pickem-form">
+      <label for="playerName">Nome Giocatore:</label>
+      <input type="text" id="playerName" name="playerName" placeholder="Inserisci il tuo nome" required>
+
+      <label for="match1">Pronostico Match 1:</label>
+      <input type="text" id="match1" name="match1" placeholder="Vincitore Match 1" required>
+
+      <label for="match2">Pronostico Match 2:</label>
+      <input type="text" id="match2" name="match2" placeholder="Vincitore Match 2" required>
+
+      <button type="submit">Invia Pronostici</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('pickem-form');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const playerName = document.getElementById('playerName').value;
+      const match1 = document.getElementById('match1').value;
+      const match2 = document.getElementById('match2').value;
+
+      // Stampa i dati per ora nella console (in futuro salveremo su Firebase)
+      console.log({playerName, match1, match2});
+
+      // Pulisci il form e mostra un messaggio di successo
+      form.reset();
+      alert("Pronostico inviato con successo!");
+    });
+  </script>
+</body>
 </html>
