@@ -27,6 +27,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Inserisci i tuoi pronostici</h1>
   <div class="form-container">
@@ -44,47 +45,10 @@
     </form>
   </div>
 
-  <script>
-    const form = document.getElementById('pickem-form');
-    
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const playerName = document.getElementById('playerName').value;
-      const match1 = document.getElementById('match1').value;
-      const match2 = document.getElementById('match2').value;
 
-      // Stampa i dati per ora nella console (in futuro salveremo su Firebase)
-      console.log({playerName, match1, match2});
-
-      // Pulisci il form e mostra un messaggio di successo
-      form.reset();
-      alert("Pronostico inviato con successo!");
-    });
-  </script>
-
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="script.js"></script> <!-- Includi il tuo file script.js -->
   
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCm_cgBqQz7rvxtlsC4WhUXLLKVkT0uPY8",
-      authDomain: "pick-em-e7f28.firebaseapp.com",
-      projectId: "pick-em-e7f28",
-      storageBucket: "pick-em-e7f28.appspot.com",
-      messagingSenderId: "970548870322",
-      appId: "1:970548870322:web:814f99f15ce364c8e89dab",
-      measurementId: "G-4XLTPFHHRQ"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
 </body>
 </html>
